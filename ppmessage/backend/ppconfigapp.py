@@ -400,7 +400,7 @@ class FirstHandler(tornado.web.RequestHandler):
         return True
     
     def _dist_ppcom(self, _request):
-        from ppmessage.ppcom.config.config import config
+        from ppmessage.ppconfig.config.ppcom import config
         _d = {
             "ssl": _get_config().get("server").get("ssl"),
             "server_name": _get_config().get("server").get("name"),
@@ -412,14 +412,13 @@ class FirstHandler(tornado.web.RequestHandler):
         return True
 
     def _dist_ppkefu(self, _request):
-        from ppmessage.ppkefu.config.config import config
+        from ppmessage.ppconfig.config.ppkefu import config
         _d = {
             "key": self._api.get(API_LEVEL.PPKEFU.lower()).get("key"),
             "server_url": _get_config().get("server").get("url")
         }
         config(_d)
         return True
-
 
     def _dist(self, _request):
         if not self._dist_ppcom(_request):
