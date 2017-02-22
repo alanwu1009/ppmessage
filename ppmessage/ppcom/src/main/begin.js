@@ -1,5 +1,0 @@
-/**
- * FILE BEGIN
- *
- */
-((function() {

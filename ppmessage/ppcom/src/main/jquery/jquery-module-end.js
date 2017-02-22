@@ -1,2 +1,0 @@
-return jQuery.noConflict(true);
-}
